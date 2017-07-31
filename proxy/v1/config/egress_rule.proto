@@ -26,6 +26,6 @@ message EgressRule {
   string name = 1;
 
   // list of domains to redirect to egress
-  repeating string domains = 2;
+  repeated string domains = 2;
 }
 
