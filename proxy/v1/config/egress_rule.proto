@@ -22,7 +22,7 @@ package istio.proxy.v1.config;
 // WARNING: This API is experimental and under active development
 message EgressRule {
   message Port {
-  	int port = 1;
+	uint32 port = 1;
 	string protocol = 2;
   }
 
