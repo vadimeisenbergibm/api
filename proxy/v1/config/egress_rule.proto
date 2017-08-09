@@ -21,11 +21,23 @@ package istio.proxy.v1.config;
 //
 // WARNING: This API is experimental and under active development
 message EgressRule {
+  message Port {
+  	int port = 1;
+	string protocol = 2;
+  }
+
   // REQUIRED: Egress rules have unique names to allow multiple rules, e.g.
   // "my-rule".
   string name = 1;
 
   // list of domains to redirect to egress
   repeated string domains = 2;
+
+  // list of ports to listen on
+  repeated Port ports = 3;
+
+  // should the external traffic be directed thru the egress proxy
+  // if false, the traffic will bypass the egress proxy
+  bool use_egress_proxy = 4;
 }
 
